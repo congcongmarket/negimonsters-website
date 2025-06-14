@@ -1,0 +1,739 @@
+/* main.css */
+/* 全局 box-sizing */
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar 容器 */
+/* 整体 NavBar 定位上下文 */
+.navbar {
+    height: 80px;
+    padding: 40px;
+}
+
+.nav__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar__icon {
+    width: 80px;
+    height: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 左侧 Icon */
+.navbar__icon img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+/* 右侧按钮原始版本 */
+/*.navbar__button {*/
+/*    font-family: 'Lexend', sans-serif;*/
+/*    font-size: 16px;*/
+/*    font-weight: 400;*/
+/*    color: #fff;*/
+/*    background: #000;*/
+/*    border-radius: 29px;*/
+/*    padding: 10px 40px;*/
+/*    margin: 20px 0;*/
+/*    text-decoration: none;*/
+/*    display: inline-block;*/
+/*    line-height: normal;*/
+/*}*/
+
+.navbar__button {
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    background: #000;
+    border-radius: 29px;
+    padding: 10px 40px;
+    margin: 20px 0;
+    text-decoration: none;
+    display: inline-block;
+    line-height: normal;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar__button::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 40px; /* 与左侧 padding 对齐 */
+    height: 2px;
+    width: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.navbar__button:hover::after {
+    width: calc(100% - 80px); /* 100% 减去左右 padding */
+}
+
+
+/* Hero Section */
+.hero {
+    margin: 124px 20px;
+}
+.hero__container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero__title {
+    color: #000;
+    font-family: 'Lexend', sans-serif;
+    font-size: 100px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.hero__subtitle {
+    color: #000;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hero__emphasis {
+    color: #C5C5C5;
+}
+
+.hero__button {
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    background: #000;
+    border-radius: 29px;
+    padding: 10px 40px;
+    text-decoration: none;
+    display: none;
+    line-height: normal;
+}
+
+/* Hero Image Container */
+.hero__image {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 124px;
+}
+.hero__image-container {
+    width: 766px;
+    height: 358px;
+    background-color: black;
+    flex-shrink: 0;
+    border-radius: 29px;
+    overflow: hidden;
+    margin: 0 auto 14px;
+    position: relative;
+    perspective: 800px;
+}
+.slogan{
+    text-align: center;
+    color: #FCF5F5;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 40px;
+}
+.hero__monster {
+    position: absolute;
+    bottom: 0;
+    object-fit: cover;
+    transform-origin: center bottom;
+    transition: transform 0.5s ease, z-index 0.2s ease;
+}
+/* Spread monsters across container with custom positions */
+.hero__monster--1 { left: -20px; z-index: 9; }
+.hero__monster--2 { left: 117px; top:208px; z-index: 10; }
+.hero__monster--3 { left: 460px; top: 138px; z-index: 12; }
+.hero__monster--4 { right: -70px; top: 115px; z-index: 8; }
+.hero__monster--5 { left: 275px; top: 230px; z-index: 11; }
+.hero__monster--6 { left: 230px; top: 133px; z-index: 7; }
+.hero__monster--7 { left: 332px; top: 164px; z-index: 6; }
+.hero__monster--8 { left: 39px; top:96px; z-index: 4; }
+.hero__monster--9 { right: 222px; top: 109px; z-index: 5; }
+.hero__monster--10 { left: 210px; top: 101px; z-index: 1; }
+.hero__monster--11 { right: 87px; top: 101px; z-index: 2; }
+.hero__monster--12 { right: 72px; top: 164px; z-index: 3; }
+.hero__monster--13 { left: 0; top: 250px; z-index: 9; }
+.hero__monster--14 { left: 100px; top: 250px; z-index:13; }
+.hero__monster--15 { right: 100px; top: 250px; z-index:13; }
+.hero__monster--16 { right: 0; top: 250px; z-index:14; }
+/* Hover scatter and fan-out on individual hover */
+.hero__monster--1:hover { transform: translate(-5px, -3px) rotate(-5deg); }
+.hero__monster--2:hover { transform: translate(-3px, -4px) rotate(-4deg); }
+.hero__monster--3:hover { transform: translate(0px, -5px) rotate(-3deg); }
+.hero__monster--4:hover { transform: translate(3px, -4px) rotate(-2deg); }
+.hero__monster--5:hover { transform: translate(5px, -3px) rotate(-1deg); }
+.hero__monster--6:hover { transform: translate(5px, 0px) rotate(0deg); }
+.hero__monster--7:hover { transform: translate(-5px, 0px) rotate(1deg); }
+.hero__monster--8:hover { transform: translate(-4px, -2px) rotate(2deg); }
+.hero__monster--9:hover { transform: translate(-3px, -4px) rotate(3deg); }
+.hero__monster--10:hover { transform: translate(0px, -5px) rotate(4deg); }
+.hero__monster--11:hover { transform: translate(4px, -3px) rotate(5deg); }
+.hero__monster--12:hover { transform: translate(3px, -1px) rotate(5deg); }
+.hero__monster--13:hover { transform: translate(2px, -3px) rotate(2deg); }
+.hero__monster--14:hover { transform: translate(5px, -1px) rotate(5deg); }
+.hero__monster--15:hover { transform: translate(3px, -2px) rotate(1deg); }
+.hero__monster--16:hover { transform: translate(2px, -1px) rotate(-5deg); }
+
+/* Scroll CTA */
+.hero__cta {
+    width: auto;
+    height: 25px;
+    flex-shrink: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.hero__cta-text {
+    color: #000;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+.hero__cta-arrow {
+    width: 13px;
+    height: 7px;
+    display: inline-block;
+}
+
+/* —— 保持 Grid 布局不变 —— */
+.main__container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 66px auto 46px;
+    justify-content: center;
+}
+
+/* —— 重要：让每个 box 都是一比一正方形 —— */
+.main__box {
+    /* 宽度按网格列自动撑开，高度自动跟宽度保持 1:1 */
+    width: 100%;
+    max-width: 325px;
+    aspect-ratio: 1 / 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(0,0,0,0.05);
+}
+
+/* —— 确保背景图正常铺满，不走样 —— */
+.main__item {
+    /* 填满父级 box */
+    width: 100%;
+    height: 100%;
+    /* 铺满且居中 */
+    background-size: cover;
+    background-position: center center;
+    transition: transform 0.3s ease;
+}
+
+.main__item:hover {
+    transform: scale(1.1);
+}
+
+/* 遮罩层 */
+.monster-overlay {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 120px 40px 190px 40px;
+}
+
+/* 弹窗体 */
+.sofubi-modal {
+    position: relative;
+    background: white;
+    border-radius: 40px;
+    column-gap: 20px;
+    aspect-ratio: 16/9;
+    padding: 40px;
+    display: flex;
+    justify-items: flex-start;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+/* 关闭按钮 */
+.close-btn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 29px;
+    background: #F2F2F2;
+    border: none;
+}
+.back-to-home {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* 图片 */
+.imgcontainer {
+    width: 50%;;
+    height: 100%;
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+.sofubi-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+/* 信息内容区域 */
+.sofubi-info {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    flex: 1 0 0;
+    overflow: hidden;
+    background: #FFF;
+}
+
+.sofubi-status {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    flex: 1 0 0;
+    overflow: auto;
+    background: #FFF;
+}
+#normal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+#top {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+#modal-name {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#modal-top {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.status {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 27px;
+    background: #000;
+}
+#modal-status {
+    color: #FFF;
+    font-family: Inter, serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.character {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+}
+#character-fix {
+    color: #000;
+    font-family: Inter, serif;
+    min-width: 140px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+#modal-character {
+    color: #7B7B7B;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.work {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+}
+#work-fix {
+    color: #000;
+    font-family: Inter, serif;
+    min-width: 140px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+#modal-work {
+    color: #7B7B7B;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.manufacturer {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+}
+#manufacturer-fix {
+    color: #000;
+    font-family: Inter, serif;
+    min-width: 140px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+#modal-manufacturer {
+    color: #7B7B7B;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.painter {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+}
+#painter-fix {
+    color: #000;
+    font-family: Inter, serif;
+    min-width: 140px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+#modal-painter {
+    color: #7B7B7B;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.mold {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+}
+#mold-fix {
+    color: #000;
+    font-family: Inter, serif;
+    min-width: 140px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+#modal-mold {
+    color: #7B7B7B;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.color {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+}
+#color {
+    color: #000;
+    font-family: Inter, serif;
+    min-width: 140px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+#modal-paint-color {
+    color: #7B7B7B;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.custom-paint {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    width: 100%;
+    font-family: Inter, sans-serif;
+    background: #FFF;
+}
+
+.custom-title {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.custom-desc {
+    color: #7B7B7B;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.custom-section {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.custom-heading {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    align-self: stretch;
+}
+
+.custom-paragraph {
+    color: #7B7B7B;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    align-self: stretch;
+}
+
+.custom-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #F3F3F3; /* 或 #DCDCDC，根据你整体视觉风格可微调 */
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/*移动端断点*/
+@media (max-width: 800px) {
+    .main__container {
+        /* 一列布局 */
+        grid-template-columns: 1fr;
+        /* 让这一列在容器内撑满可用宽度，并左右留 20px */
+        max-width: none;        /* 取消桌面端的 max-width 限制 */
+        padding: 0 20px;        /* 左右各 20px 内边距 */
+        margin: 66px auto 46px; /* 保留上下边距，水平居中 */
+        justify-items: stretch; /* 让单列格子撑满整行 */
+    }
+
+    .main__box {
+        /* 取消 max-width，让 box 宽度自动等于格子宽度 */
+        max-width: none;
+        /* 继续保持 1:1 比例 */
+        aspect-ratio: 1 / 1;
+    }
+
+    .main__item:hover{
+        transform: none;
+    }
+
+    .navbar__button {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .hero__image-container {
+        width: 100%;
+        flex-shrink: 1;
+    }
+
+    .hero__container {
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .hero__title {
+        font-size: 48px;
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .hero__button {
+        display: inline-block;
+    }
+
+    .hero__button:active {
+        background-color: #333333;
+    }
+
+    .monster-overlay {
+        padding: 80px 0 0 0;
+    }
+
+    .sofubi-modal {
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 40px 40px 0 0;
+    }
+
+    .imgcontainer {
+        height: 50%;
+        width: auto;
+    }
+    .sofubi-info {
+        height: 50%;
+        width: auto;
+    }
+
+    #top{
+        display: flex;
+    }
+
+    #normal {
+        display: none;
+    }
+
+    .hero__monster--1:hover { transform: none; }
+    .hero__monster--2:hover { transform: none; }
+    .hero__monster--3:hover { transform: none; }
+    .hero__monster--4:hover { transform: none; }
+    .hero__monster--5:hover { transform: none; }
+    .hero__monster--6:hover { transform: none; }
+    .hero__monster--7:hover { transform: none; }
+    .hero__monster--8:hover { transform: none; }
+    .hero__monster--9:hover { transform: none; }
+    .hero__monster--10:hover { transform: none; }
+    .hero__monster--11:hover { transform: none; }
+    .hero__monster--12:hover { transform: none; }
+    .hero__monster--13:hover { transform: none; }
+    .hero__monster--14:hover { transform: none; }
+    .hero__monster--15:hover { transform: none; }
+    .hero__monster--16:hover { transform: none; }
+}
+
