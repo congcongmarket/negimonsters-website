@@ -196,6 +196,7 @@ p {
 .hero__monster--14 { left: 100px; top: 250px; z-index:13; }
 .hero__monster--15 { right: 100px; top: 250px; z-index:13; }
 .hero__monster--16 { right: 0; top: 250px; z-index:14; }
+.hero__monster--17 { left: 50px; top: 50px; z-index:0; }
 /* Hover scatter and fan-out on individual hover */
 .hero__monster--1:hover { transform: translate(-5px, -3px) rotate(-5deg); }
 .hero__monster--2:hover { transform: translate(-3px, -4px) rotate(-4deg); }
@@ -213,6 +214,7 @@ p {
 .hero__monster--14:hover { transform: translate(5px, -1px) rotate(5deg); }
 .hero__monster--15:hover { transform: translate(3px, -2px) rotate(1deg); }
 .hero__monster--16:hover { transform: translate(2px, -1px) rotate(-5deg); }
+.hero__monster--17:hover { transform: translate(1px, 1px) rotate(3deg); }
 
 /* Scroll CTA */
 .hero__cta {
