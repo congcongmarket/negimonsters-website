@@ -1,6 +1,5 @@
 /* main.css */
 /* 全局 box-sizing */
-
 html {
     box-sizing: border-box;
 }
@@ -14,56 +13,56 @@ html {
     -ms-user-select: none;
     user-select: none;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color: #F8F8F8; /* 浅色背景基调可自定 */
+}
+
 p {
     margin: 0;
     padding: 0;
 }
 
 /* Navbar 容器 */
-/* 整体 NavBar 定位上下文 */
 .navbar {
-    height: 80px;
-    padding: 40px;
+    width: 100%;
+    padding: 20px 40px;
 }
 
 .nav__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .navbar__icon {
-    width: 80px;
-    height: 80px;
-    display:flex;
+    width: 40px;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* 左侧 Icon */
 .navbar__icon img {
     width: 40px;
     height: 40px;
-    display: inline-block;
+    display: block;
 }
 
-/* 右侧按钮原始版本 */
-/*.navbar__button {*/
-/*    font-family: 'Lexend', sans-serif;*/
-/*    font-size: 16px;*/
-/*    font-weight: 400;*/
-/*    color: #fff;*/
-/*    background: #000;*/
-/*    border-radius: 29px;*/
-/*    padding: 10px 40px;*/
-/*    margin: 20px 0;*/
-/*    text-decoration: none;*/
-/*    display: inline-block;*/
-/*    line-height: normal;*/
-/*}*/
+/* 中间 Logo 约束 */
+.navbar__logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
 
 .navbar__button {
-    font-family: 'Lexend', sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #fff;
@@ -110,7 +109,6 @@ p {
 
 .hero__title {
     color: #000;
-    font-family: 'Lexend', sans-serif;
     font-size: 100px;
     font-weight: 300;
     line-height: normal;
@@ -119,7 +117,6 @@ p {
 .hero__subtitle {
     color: #000;
     text-align: center;
-    font-family: 'Lexend', sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: normal;
@@ -130,7 +127,6 @@ p {
 }
 
 .hero__button {
-    font-family: 'Lexend', sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #fff;
@@ -234,7 +230,6 @@ p {
 }
 .hero__cta-text {
     color: #000;
-    font-family: 'Lexend', sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: normal;
@@ -331,7 +326,7 @@ p {
 
 /* 图片 */
 .imgcontainer {
-    width: 50%;;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;  /* 水平居中 */
@@ -668,7 +663,7 @@ p {
     }
 
     .navbar {
-        padding: 0;
+        padding: 20px;
     }
 
     .hero__image-container {
@@ -743,4 +738,3 @@ p {
     .hero__monster--15:hover { transform: none; }
     .hero__monster--16:hover { transform: none; }
 }
-
