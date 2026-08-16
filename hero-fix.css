@@ -1,8 +1,8 @@
-/* Keep the full 1440 × 900 hero artwork visible on wide desktop screens. */
+/* Show the complete hero artwork at every desktop aspect ratio. */
 @media (min-width: 801px) {
   .hero-visual {
     background-position: right bottom;
-    background-size: auto 100%;
+    background-size: contain;
     background-repeat: no-repeat;
   }
 }
