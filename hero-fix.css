@@ -1,8 +1,0 @@
-/* Show the complete hero artwork at every desktop aspect ratio. */
-@media (min-width: 801px) {
-  .hero-visual {
-    background-position: right bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
